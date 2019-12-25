@@ -1,0 +1,19 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: s84092916
+  profiles :
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/ihub?allowMultiquery=true
+    username: root
+    password: Saurav@2502
+  devtools:
+    add-properties: true
+    liverload:
+      enabled: true
+      port: 35729
+    remote:
+      restart:
+        enabled: true
