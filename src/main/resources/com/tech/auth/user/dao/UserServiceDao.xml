@@ -9,4 +9,10 @@
         t.user_password as userPass
         from ihub_user_t t where t.user_id=#{userId}
     </select>
+    <select id="findAllUser" resultType="com.tech.auth.user.entity.UserVo">
+        select t.user_name as userName,
+        t.user_id as userId,
+        t.user_password as userPass
+        from ihub_user_t t
+    </select>
 </mapper>
