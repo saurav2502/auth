@@ -2,25 +2,21 @@ package com.tech.auth;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInterceptor;
 import com.tech.auth.common.pageutil.pageResult;
 import com.tech.auth.user.dao.UserServiceDao;
 import com.tech.auth.user.entity.PageVO;
 import com.tech.auth.user.entity.UserVo;
+import java.util.List;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-import java.util.Properties;
 
 @SpringBootApplication
 @MapperScan("com.tech.auth.**.dao")
@@ -37,7 +33,7 @@ public class AuthenticateApplication {
 	private UserServiceDao userServiceDao;
 
 
-	@Bean
+	/*@Bean
 	public PageInterceptor[] pageInterceptors() {
 		PageInterceptor pageInterceptor = new PageInterceptor();
 		Properties properties = new Properties();
@@ -49,7 +45,7 @@ public class AuthenticateApplication {
 		pageInterceptor.setProperties(properties);
 		return new PageInterceptor[] { pageInterceptor };
 	}
-
+*/
 	@GetMapping("/welcome/{str}")
 	public Boolean welcome(@PathVariable final String str){
 		logger.info("entering to the metod");
